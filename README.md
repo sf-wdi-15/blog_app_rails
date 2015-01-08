@@ -18,7 +18,7 @@ A article should have attributes `title`, `author`, and `content`.
 * A new page to create a article
 * An edit page to edit a article
 * A route to article new articles to
-* A routearticle to update articles
+* A route article to update articles
 * A route to delete articles
 
 
