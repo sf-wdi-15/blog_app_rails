@@ -27,5 +27,5 @@ A article should have attributes `title`, `author`, and `content`.
 
 After completing the above you'll be using the [`typheous gem`](https://github.com/typhoeus/typhoeus) to make API requests to [Alchemy's keyword API](http://www.alchemyapi.com/api/keyword/textc.html).
 
-You'll need to play with typheous to make requests before using Alchemy. Afterward, you'll need to sign up for Alchemy's API and use the info from the link above on the text api to article blog content to the alchemy API, and get back the keywords for the blog. Then you want to display the keywords on the show page for the article.
+You'll need to play with typheous to make requests before using Alchemy. Afterward, you'll need to sign up for Alchemy's API and use the info from the link above on the text api to post blog content to the alchemy API, and get back the keywords for the blog. Then you want to display the keywords on the show page for the article.
 
