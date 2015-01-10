@@ -1,0 +1,13 @@
+<% @blogs.each do |blog| %>
+
+    <div>
+        <div>
+          <%= link_to blog.title, blog_path(blog.id) %>
+        </div>
+        Title: <%= blog.title %> <br>
+        Author: <%=blog.author %> <br>
+        Content: <%=  blog.content %>
+        <%= button_to "Delete", blog, method: :delete %>
+    </div>
+
+<% end %>
