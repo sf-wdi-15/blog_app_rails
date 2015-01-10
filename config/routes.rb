@@ -1,56 +1,21 @@
+
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+        root to: 'blogs#index'
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+        # Add prefixes to routes using `as: "some_prefix"` syntax
+        get '/blogs', to: 'blogs#index', as: "blogs"
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+        get '/blogs/new', to: 'blogs#new', as: "new_blog"
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+        get '/blogs/:id', to: 'blogs#show', as: "blog"
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+        get '/blogs/:id/edit', to: 'blogs#edit', as: "edit_blog"        
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+        post "/blogs", to: "blogs#create"
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+        # The update route
+        patch "/blogs/:id", to: "blogs#update"
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
-end
+        # the destroy route
+        delete "/blogs/:id", to: "blogs#destroy"
+    end

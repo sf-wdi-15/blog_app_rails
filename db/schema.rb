@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20150109004739) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
-    t.string   "author"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "date"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
