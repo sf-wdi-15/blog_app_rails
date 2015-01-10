@@ -1,10 +1,55 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'bootstrap';
+
 body{
   background: #EBEBEB;
   color: #AA915C;
   font-family: Garamond Premier Pro;
   font-size: 1.5em;
 
+}
+
+#container{
+  margin-left:auto;
+  margin-right:auto;
+  background:yellow;
+
+}
+
+#postLink{
+  margin-left:25px;
+  background:aqua;
+}
+
+#postBlog{
+  width:auto;
+  white-space:nowrap;
+}
+
+#newContainer{
+  width: 85em;
+  height: 55em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5em;
+
+}
+
+#newTextField{
+  margin-left: 55px;
+}
+
+#editContainer{
+  width: 85em;
+  height: 55em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5em;
+
+}
+
+#editTextField{
+  margin-left: 55px;
 }
