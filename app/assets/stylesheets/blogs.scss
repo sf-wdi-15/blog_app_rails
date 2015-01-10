@@ -7,9 +7,10 @@ body{
   background: #EBEBEB;
   color: #AA915C;
   font-family: Garamond Premier Pro;
-  font-size: 1.5em;
+  font-size: 1.7em;
 
 }
+
 
 #container{
   margin-left:auto;
@@ -24,9 +25,19 @@ body{
 }
 
 #postBlog{
-  width:auto;
-  white-space:nowrap;
+    width: 35em;
+    min-height: 100%;
+    height: auto; 
+   
 }
+#postBlog > .row {
+ overflow-x:scroll;
+     overflow-y:hidden;
+}    
+#postBlog > .row [class*="col-lg"], #main-content > .row [class*="col-md"], #main-content > .row [class*="col-sm"] {
+    float:left;
+}
+
 
 #newContainer{
   width: 85em;
