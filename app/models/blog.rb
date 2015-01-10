@@ -1,4 +1,4 @@
-class Article < ActiveRecord::Base
+class Blog < ActiveRecord::Base
 def make_request
 request = Typhoeus::Request.new(
   "http://access.alchemyapi.com/calls/text/TextGetRankedKeywords",
