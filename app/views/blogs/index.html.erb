@@ -4,14 +4,14 @@
   <title></title>
 </head>
 <body>
-<div id= "container-fluid">
+<div class="container" id="main-content">
   
-index page 
+<h1>index page</h1> 
 
 <% @blogs.each do |blog| %>
 
 <div class="row">
-<div id= "postLink" class="col-md-1"><%= link_to blog.title, blog_path(blog.id) %></div>   
+  <div id= "postLink" class="col-md-1"><%= link_to blog.title, blog_path(blog.id) %></div>    
   
  
 <div id= "postBlog" class="col-lg-3 col-md-4 col-sm-6 col-xs-12"> 

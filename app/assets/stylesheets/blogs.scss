@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'bootstrap';
 
+h1{
+  margin-left:10px;
+}
+
 body{
   background: #EBEBEB;
   color: #AA915C;
@@ -12,31 +16,27 @@ body{
 }
 
 
-#container{
-  margin-left:auto;
-  margin-right:auto;
-  background:yellow;
-
+#main-content{
+  width:500%
 }
 
+
+
 #postLink{
+width: 10em;
   margin-left:25px;
   background:aqua;
 }
 
 #postBlog{
+    
     width: 35em;
     min-height: 100%;
     height: auto; 
    
 }
-#postBlog > .row {
- overflow-x:scroll;
-     overflow-y:hidden;
-}    
-#postBlog > .row [class*="col-lg"], #main-content > .row [class*="col-md"], #main-content > .row [class*="col-sm"] {
-    float:left;
-}
+
+
 
 
 #newContainer{
