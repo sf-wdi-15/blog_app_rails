@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BlogAppRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  
+  <div class="main_nav">
+    <h2 class="main_logo">Burning Up In Speed</h2>
+    <button class="nav_button">
+      <%= link_to 'New Article', new_article_path, :method => :get %>
+    </button>
+    <button class="nav_button">Contact</button>
+    <button class="nav_button">About</button>
+    <button class="nav_button">
+      <%= link_to 'Home', articles_path, :method => :get %>
+    </button>
+  </div>
+
+<%= yield %>
+
+</body>
+</html>

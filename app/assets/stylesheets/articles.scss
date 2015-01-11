@@ -1,0 +1,44 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.main_nav {
+  height: 100px;
+  color: red;
+  background-color: black;
+}
+
+.main_logo {
+  font-size: 50px;
+  float: left;
+
+}
+
+.nav_button {
+  float: right;
+  margin-top: 30px;
+  background-color: red;
+  color: black;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.andy_pohl {
+  float: right;
+  top: 25px;
+}
+
+.article_container {
+  background-color: blue;
+}
+
+.title {
+  color: orange;
+}
+
+.author {
+  color: green;
+}
+
+.content {
+  color: pink;
+}
