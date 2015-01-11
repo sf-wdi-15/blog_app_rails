@@ -7,12 +7,22 @@ h1{
   margin-left:10px;
 }
 
+h3{
+  margin-top:-14px;
+  margin-left: 25px;
+}
+
 body{
   background: #EBEBEB;
   color: #AA915C;
   font-family: Garamond Premier Pro;
   font-size: 1.7em;
 
+}
+
+footer{
+  margin-left:25px;
+  
 }
 
 
@@ -24,20 +34,15 @@ body{
 
 #postLink{
 width: 10em;
-  margin-left:25px;
-  background:aqua;
+margin-left:25px;
 }
 
 #postBlog{
-    
-    width: 35em;
-    min-height: 100%;
-    height: auto; 
+  width: 35em;
+  min-height: 100%;
+  height: auto; 
    
 }
-
-
-
 
 #newContainer{
   width: 85em;
@@ -64,3 +69,11 @@ width: 10em;
 #editTextField{
   margin-left: 55px;
 }
+
+#singleBlog{
+  margin-top:30px; 
+  margin-left:70px;
+  margin-right:70px; 
+  font-size:1.3em;
+}
+
