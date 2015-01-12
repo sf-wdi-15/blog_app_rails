@@ -15,12 +15,10 @@ class Article < ActiveRecord::Base
     request.run
 
     response = request.response
-    keywordResults = response.body
+    keywordResults = JSON.parse(response.body)
+    keyword = keywordResults["keywords"]
     puts keywordResults
-    response.code
-    response.total_time
-    response.headers
-    response.body
+    return keyword
   end   
 
 end

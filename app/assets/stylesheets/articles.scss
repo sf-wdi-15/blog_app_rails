@@ -28,7 +28,7 @@
 }
 
 .article_container {
-  background-color: blue;
+  background-color: rgba(52, 73, 94,1.0);
 }
 
 .title {
@@ -40,5 +40,20 @@
 }
 
 .content {
-  color: pink;
+  color: red;
+}
+
+.keyword {
+  color: red;
+  font-style: bold;
+}
+
+.sub_title {
+  color: red;
+}
+
+#adpohl {
+  height: 400px;
+  width: 400px;
+  padding-left: 10px;
 }

@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    api_request = @article.make_request
+    @keywordResults = @article.make_request
     render :show
   end
 
