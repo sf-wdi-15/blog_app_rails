@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   get "/articles/new", to: "articles#new", as: "new_article"
 
+  get "/articles/about", to: "articles#about", as: "about"
+
+  get "/articles/contact", to: "articles#contact", as: "contact"
+
   post "/articles", to: "articles#create"
 
   get "/articles/:id", to: "articles#show", as: "article"
