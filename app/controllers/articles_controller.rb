@@ -20,6 +20,12 @@ class ArticlesController < ApplicationController
 		render :edit
 	end
 
+	def create
+	    new_article = params.require(:article).permit(:title, :author, :content)
+	    article = Article.create(new_article)
+	    redirect_to articles_path
+    end
+
 	def update
 		article = Article.find(params[:id])
 		article_params = params.require(:article).permit(:title, :author, :content)
