@@ -23,18 +23,27 @@
     </div><!--/.nav-collapse -->
   </div>
 </nav>
-
 <!-- End of Navigation -->
 
 <!-- Containter -->
 <div class="container">
-	
-
 	<div>
 	    <h3>Title: <%= @article.title %> <br></h3>
 	    <h4>Author: <%=  @article.author %> <br></h4>
 	    <p>Content: <%= @article.content %> </p>
-
 	</div>
   <%= link_to "EDIT ARTICLE", edit_article_path( @article) %>
+
+  <div>
+    <% @keywordResults %>
+    <h3>Keywords</h3>
+  </div>
+
+  <div>
+    <% @keywordResults.each do |keyword| %>
+    <h5 class="keyword">Keyword: <%= keyword["text"] %></h5>
+    <h5 class="relevance">Relevance: <%= keyword["relevance"] %></h5>
+    <% end %>
+  </div>
 </div>
+

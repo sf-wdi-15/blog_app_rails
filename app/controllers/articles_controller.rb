@@ -9,14 +9,9 @@ class ArticlesController < ApplicationController
 		render :new
 	end
 
-	def create
-		newarticle = params.require(:article).permit(:title, :author, :content)
-		article = Article.create(newarticle)
-		redirect_to article_path(article.id)
-	end
-
 	def show
 		@article = Article.find(params[:id])
+		@keywordResults = @article.make_request
 		render :show
 	end
 
