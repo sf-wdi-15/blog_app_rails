@@ -23,9 +23,13 @@ class BlogsController < ApplicationController
   end
 
   def edit
+    if current_user 
     id = params[:id]
     @blog = Blog.find(id)
     render :edit
+  else
+    redirect_to login_path
+  end
   end
 
   def update

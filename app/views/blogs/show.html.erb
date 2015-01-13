@@ -1,5 +1,12 @@
 <div id='singleBlog'>
+
+
   Title: <%= @blog.title %> <br>
   Date: <%= @blog.date %> <br>
   Content: <%=  @blog.content %>
 </div>
+
+<% if current_user %>
+  <%= link_to "edit", edit_blog_path(@blog) %>
+
+<% end %>

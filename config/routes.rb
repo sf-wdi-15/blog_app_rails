@@ -1,5 +1,15 @@
 
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  get 'users/index'
+
+  get 'users/show'
+
+  get 'users/new'
+
+  get 'users/edit'
+
         root to: 'blogs#index'
 
         # Add prefixes to routes using `as: "some_prefix"` syntax
@@ -18,4 +28,15 @@ Rails.application.routes.draw do
 
         # the destroy route
         delete "/blogs/:id", to: "blogs#destroy"
+ ######login#####
+  get "/login", to: "sessions#new"
+
+  post "/sessions", to: "sessions#create"
+
+  get "/sign_up", to: "users#new", as: "sign_up"
+
+  get "/logout", to: "sessions#destroy", as: "logout"
+
+  resources :users
+      
     end
