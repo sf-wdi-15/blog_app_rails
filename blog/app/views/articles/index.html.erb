@@ -1,0 +1,13 @@
+<% @articles.each do |article| %>
+
+    <div>
+        Name: <%= article.title %> <br>
+        Author: <%= article.author %><br>
+        Description: <%=  article.content %>
+    </div>
+    <br>
+    <br>
+
+<% end %>
+
+<a href="/articles/new/">NEW</a>

@@ -1,0 +1,11 @@
+<%= form_for :article, url: "/articles", method: "post" do |f| %>
+	
+	Title:
+    <%= f.text_field :title %><br><br>
+    Author:
+    <%= f.text_field :author %><br><br>
+    Content:
+    <%= f.text_area :content %><br>
+    <%= f.submit "save article" %>
+
+<% end %>
