@@ -11,8 +11,8 @@ class BlogsController < ApplicationController
   end
 
   def create
-    new_creature = params.require(:blog).permit(:title, :date, :content)
-    blog = Blog.create(new_creature)
+    new_blog = params.require(:blog).permit(:title, :date, :content)
+    blog = Blog.create(new_blog)
     redirect_to blog_path(blog.id)
   end
 
@@ -38,21 +38,20 @@ class BlogsController < ApplicationController
 
     # get updated data
     blog_params = params.require(:blog).permit(:title, :date, :content)
-    # update the creature
+    # update the blog
     blog.update(blog_params)
 
-    #redirect to show
-    # redirect_to "/creatures/#{creature_id}"
     redirect_to blog_path(blog)
   end 
 
-    def destroy
-    # if current_user  
+  def destroy
+    if current_user
     id = params[:id]
     blog = Blog.find(id)
     blog.destroy
     redirect_to "/blogs"
   end
+end
 
 
 end

@@ -8,5 +8,8 @@
 
 <% if current_user %>
   <%= link_to "edit", edit_blog_path(@blog) %>
+<% end %>
 
+<% if current_user %>
+  <%= button_to "Delete", delete_blog_path(@blog), method: :delete %>
 <% end %>

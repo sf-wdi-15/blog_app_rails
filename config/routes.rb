@@ -26,8 +26,8 @@ Rails.application.routes.draw do
         # The update route
         patch "/blogs/:id", to: "blogs#update"
 
-        # the destroy route
-        delete "/blogs/:id", to: "blogs#destroy"
+        # the delete blog
+        delete "/blogs/:id", to: "blogs#destroy", as: "delete_blog"
  ######login#####
   get "/login", to: "sessions#new"
 
