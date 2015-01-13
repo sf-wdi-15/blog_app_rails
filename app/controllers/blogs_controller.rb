@@ -24,12 +24,12 @@ class BlogsController < ApplicationController
 
   def edit
     if current_user 
-    id = params[:id]
-    @blog = Blog.find(id)
-    render :edit
-  else
-    redirect_to login_path
-  end
+      id = params[:id]
+      @blog = Blog.find(id)
+      render :edit
+    else
+      redirect_to login_path
+    end
   end
 
   def update
@@ -47,6 +47,7 @@ class BlogsController < ApplicationController
   end 
 
     def destroy
+    # if current_user  
     id = params[:id]
     blog = Blog.find(id)
     blog.destroy
