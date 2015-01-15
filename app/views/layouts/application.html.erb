@@ -24,9 +24,14 @@
     <button class="nav_button">
       <%= link_to 'Home', articles_path, :method => :get %>
     </button>
+    <% if current_user %>
+      <button class="nav_button">
+        <%= link_to "logout", "/logout", method: "delete" %>
+      </button>
+    <% end %>
   </div>
 
-  <p class="sub_title">The Musings Of A Death Rock Boy</p>
+  <p class="sub_title">The Endless Drags Of A Death Rock Boy</p>
 
 <%= yield %>
 

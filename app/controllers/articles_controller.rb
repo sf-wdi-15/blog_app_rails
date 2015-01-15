@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_filter :logged_in?
+  #before_action :require_login
 
   def index
     @articles = Article.all
@@ -12,7 +14,7 @@ class ArticlesController < ApplicationController
 
   def create
     new_article = params.require(:article).permit(:title, :author, :content)
-    article = Article.create(new_article)
+    article = current_user.articles.create(new_article)
     redirect_to articles_path
   end
 
@@ -40,5 +42,15 @@ class ArticlesController < ApplicationController
     article.destroy
     redirect_to articles_path
   end
+
+  private
+
+  def require_login
+    unless @current_user 
+      flash[:error] = "You must be logged in to access this section"
+      redirect_to "/login"
+    end
+  end
+
 
 end

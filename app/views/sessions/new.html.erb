@@ -1,0 +1,17 @@
+<%= form_for :user, url: "/sessions", method: "post" do |f| %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+    <% end %>
+  <div>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.text_field :password %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+  <div>
+    <%= link_to "Forgot Password?", new_password_path %>
+  </div>
+<% end %>

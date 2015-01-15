@@ -1,4 +1,34 @@
 Rails.application.routes.draw do
+
+  # get 'sessions/new'
+
+  # get 'users/index'
+
+  # get 'users/show'
+
+  # get 'users/new'
+
+  # get 'users/edit'
+
+  get "/login", to: "sessions#new"
+
+  post "/sessions", to: "sessions#create"
+
+  get "/sign_up", to: "users#new", as: "sign_up"
+
+  delete "/logout", to: "sessions#destroy", as: "logout"
+
+  resources :users
+
+  # recources :passwords
+
+  get 'passwords/new', to: "passwords#new", as: "new_password"
+
+  post "/passwords", to: "passwords#create"
+
+  post "/passwords/:id", to: "passwords#update"
+
+
   get "articles/index"
 
   root to: "articles#index"
