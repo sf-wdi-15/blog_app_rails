@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BlogAppRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+</head>
+<body>
+  
+  <div class="main_nav">
+    <h2 class="main_logo">Burning Up In Speed</h2>
+    <button class="nav_button">
+      <%= link_to 'New Article', new_article_path, :method => :get %>
+    </button>
+    <button class="nav_button">
+      <%= link_to 'Contact', contact_path, :method => :get %>
+    </button>
+    <button class="nav_button">
+      <%= link_to 'About', about_path, :method => :get %>
+    </button>
+    <button class="nav_button">
+      <%= link_to 'Home', articles_path, :method => :get %>
+    </button>
+    <% if current_user %>
+      <button class="nav_button">
+        <%= link_to "logout", "/logout", method: "delete" %>
+      </button>
+    <% end %>
+  </div>
+
+  <p class="sub_title">The Endless Drags Of A Death Rock Boy</p>
+
+<%= yield %>
+
+</body>
+</html>

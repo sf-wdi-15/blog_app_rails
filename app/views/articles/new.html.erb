@@ -1,0 +1,12 @@
+<h2 class="submit_title">Submit A New Article</h2>
+<div class="control-group">
+  <%= form_for @article do |f| %>
+  <fieldset>
+    <div class="control-group">
+      <%= f.text_field :title, placeholder: "Title" %><br><br>
+      <%= f.text_area :content, placeholder: "Content" %><br>
+      <%= f.submit "Save Article" %>
+    </div>
+  </fieldset>
+
+<% end %>
