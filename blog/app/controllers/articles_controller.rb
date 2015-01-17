@@ -9,11 +9,10 @@ class ArticlesController < ApplicationController
             render :new
     end
 
-	def create
-            new_article = params.require(:article).permit(:title, :content)
-            article = Article.create(new_article)
-            redirect_to "/articles/#{article.id}"
-        end
+	 def create
+        @article = current_user.articles.create(article_params)
+        redirect_to article_path(@article.id)
+    end
 
 	def show
             id = params[:id]
