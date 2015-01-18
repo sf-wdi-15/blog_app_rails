@@ -1,42 +1,50 @@
 class ArticlesController < ApplicationController
-	def index
-		@articles = Article.all
-		render :index
-	end
 
-	def new
-            @article = Article.new
-            render :new
+    def logged_in?
+        # avoid people doing anything with articles unless logged in
+        if current_user == nil
+            redirect_to "/login"
+        end
     end
 
-	 def create
-        @article = current_user.articles.create(article_params)
-        redirect_to article_path(@article.id)
+    def index
+        @articles = Article.all
+        render :index
     end
 
-	def show
-            id = params[:id]
-            @article = Article.find(id)
-            render :show
+    def new
+        @article = Article.new
+        render :new
+    end
+
+    def show
+        @article = Article.find(params[:id])
+        @keywordResults = @article.make_request
+        render :show
     end
 
     def edit
-            id = params[:id]
-            @article = Article.find(id)
-            render :edit
+        @article = Article.find(params[:id])
+        render :edit
+    end
+
+    def create
+        new_article = params.require(:article).permit(:title, :author, :content)
+        article = Article.create(new_article)
+        redirect_to articles_path
     end
 
     def update
         article = Article.find(params[:id])
-        article_params = params.require(:article).permit(:title, :content)
-        article.update(article_params)
+        article_params = params.require(:article).permit(:title, :author, :content)
+        article.update_attributes(article_params)
         redirect_to article_path(article)
     end
 
-     def destroy
-        id = params[:id]
-        article = Article.find(id)
+    def destroy
+        article = Article.find(params[:id])
         article.destroy
-        redirect_to "/articles"
+        redirect_to root_path
     end
+
 end

@@ -1,9 +1,7 @@
-<%= form_for :article, url: "/articles", method: "post" do |f| %>
+<%= form_for @article do |f| %>
 	
-	Title:
-    <%= f.text_field :title %><br><br>
-    Content:
-    <%= f.text_area :content %><br>
+    <%= f.text_field :title, placeholder: "Title" %><br><br>
+    <%= f.text_area :content, placeholder: "Content" %><br>
     <%= f.submit "save article" %>
 
 <% end %>
