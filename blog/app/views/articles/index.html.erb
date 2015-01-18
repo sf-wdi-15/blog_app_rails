@@ -1,0 +1,13 @@
+<% @articles.each do |article| %>
+
+    <div>
+    	<% link_to article.title, article_path(article.id) %>
+        Name: <%= article.title %> <br>
+        Description: <%=  article.content %>
+    </div>
+    <br>
+    <br>
+	<%= button_to "Delete", article, method: :delete %>
+<% end %>
+
+<a href="/articles/new/">NEW</a>

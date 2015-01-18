@@ -1,0 +1,13 @@
+<div>
+        Title: <%= @article.title %> <br>
+        Content: <%=  @article.content %>
+</div>
+
+<%= link_to "EDIT ARTICLE", edit_article_path( @article ) %>
+
+<% @keywordResults %>
+
+<% @keywordResults.each do |keyword| %>
+Keyword:<%= keyword["text"] %>
+Relevence:  <%= keyword["relevance"] %>
+<% end %>
