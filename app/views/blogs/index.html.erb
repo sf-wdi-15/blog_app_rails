@@ -18,15 +18,16 @@
 <div id= "postBlog" class="col-lg-3 col-md-4 col-sm-6 col-xs-12"> 
       <!-- Title: --> <%= blog.title %> <br>
       <!--  date: --> <%=  blog.date %> <br>
-      <!-- Content: --> <%= blog.content %>
-       
-       <%= button_to "Edit", edit_blog_path(blog),method: :get %> 
+      <!-- Content:--><%= blog.content %>
+    <div class="edit_button">   
+       <%= button_to "Edit", edit_blog_path(blog), method: :get %> 
+    </div>   
 </div> 
 
 <% end %>
 </div>
 </div>
-<footer>User Resources: <a href="/blogs/new">New Post,</a> <a href="/blogs/:id/edit">Edit,</a> Delete</footer>
+<footer>User Resources: <a href="/blogs/new">New Post,</a> <a href="/blogs/:id/edit">Edit,</a><a href="/sign_up"> Sign Up,</a><a href="/login"> Login</a></footer>
 <script type="text/javascript" src= "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
 </body>
