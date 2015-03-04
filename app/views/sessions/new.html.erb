@@ -1,5 +1,8 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div class="container">
+<div class+"header">
+<h1>Login</h1>
+</div>
+<div class="login_form">
 <%= form_for :user, url: "/sessions", method: "post" do |f| %>
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, class: name %>
@@ -7,10 +10,14 @@
   <div>
     <%= f.text_field :email %>
   </div>
+  <br>
   <div>
     <%= f.text_field :password %>
   </div>
+  <br>
   <div>
     <%= f.submit %>
   </div>
 <% end %>
+</div>
+</div>
