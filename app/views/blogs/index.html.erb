@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<div class="container-fluid" id="main-content">
+<div class="row">
+<h1>Sea Legs</h1> 
+<h3> the illusion of motion after spending time at sea </h3>
+
+<% @blogs.each do |blog| %>
+
+  <div id= "postLink" class="col-md-1"><%= link_to blog.title, blog_path(blog.id) %></div>    
+  <!-- do another each.do |blog| to get hyperlinks to work -->
+ <!-- @blogs.each do |blog| %> -->
+      <div id= "postBlog" class="col-lg-3 col-md-4 col-sm-6 col-xs-12"> 
+      <!-- Title: --> <%= blog.title %> <br>
+      <!--  date: --> <%=  blog.date %> <br>
+      <!-- Content:--><%= blog.content %>
+      <div class="edit_button">   
+         <%= button_to "Edit", edit_blog_path(blog), method: :get %> 
+      </div>   
+    </div> 
+
+<% end %>
+  
+</div>
+<footer>User Resources: <a href="/blogs/new">New Post,</a> <a href="/blogs/:id/edit">Edit,</a><a href="/sign_up"> Sign Up,</a><a href="/login"> Login</a></footer>
+<script type="text/javascript" src= "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<div class="container">
+<div class+"header">
+<h1>Login</h1>
+</div>
+<div class="login_form">
+<%= form_for :user, url: "/sessions", method: "post" do |f| %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+    <% end %>
+  <div>
+    <%= f.text_field :email, placeholder: "email" %>
+  </div>
+  <br>
+  <div>
+    <%= f.text_field :password, placeholder:"password" %>
+  </div>
+  <br>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>
+</div>
